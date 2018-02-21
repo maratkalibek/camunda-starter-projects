@@ -22,7 +22,7 @@ public class InMemoryH2Test {
   @Rule
   public static ProcessEngineRule rule = TestCoverageProcessEngineRuleBuilder.create().build();
 
-  private static final String PROCESS_DEFINITION_KEY = "camunda-starter-jee";
+  private static final String PROCESS_DEFINITION_KEY = "camunda-starter-java-ee";
 
   static {
     LogFactory.useSlf4jLogging(); // MyBatis

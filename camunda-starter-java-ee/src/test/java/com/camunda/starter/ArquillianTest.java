@@ -23,7 +23,7 @@ import org.junit.runner.RunWith;
 @RunWith(Arquillian.class)
 public class ArquillianTest {
   
-  private static final String PROCESS_DEFINITION_KEY = "camunda-starter-jee";
+  private static final String PROCESS_DEFINITION_KEY = "camunda-starter-java-ee";
 
   @Deployment
   public static WebArchive createDeployment() {
