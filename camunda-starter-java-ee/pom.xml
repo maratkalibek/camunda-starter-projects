@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.camunda.starter</groupId>
-  <artifactId>camunda-starter-jee</artifactId>
+  <artifactId>camunda-starter-java-ee</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
   <packaging>war</packaging>

@@ -18,7 +18,7 @@ The projects are preconfigured and ready to run with maven, so it should be a ma
 
 Choose the appropriate starter project according to your tech stack:
 
-- Use [camunda-starter-jee](camunda-starter-jee) if you plan on deploying your process application onto a Java EE Application server such as JBoss, Wildfly, WebSphere or WebLogic.
+- Use [camunda-starter-java-ee](camunda-starter-java-ee) if you plan on deploying your process application onto a Java EE Application server such as JBoss, Wildfly, WebSphere or WebLogic.
 - Use [camunda-starter-servlet](camunda-starter-servlet) if you plan on deploying your process application onto a servlet container such as Apache Tomcat.
 - Use [camunda-starter-spring-boot](camunda-starter-spring-boot) if you plan on running your process application as a spring boot application with an embedded Tomcat.
 

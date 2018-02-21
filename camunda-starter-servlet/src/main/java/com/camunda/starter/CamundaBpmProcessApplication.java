@@ -1,4 +1,4 @@
-package com.camunda.starter.camunda_starter_servlet;
+package com.camunda.starter;
 
 import java.util.HashMap;
 import java.util.Map;

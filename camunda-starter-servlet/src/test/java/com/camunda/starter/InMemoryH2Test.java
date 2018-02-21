@@ -1,4 +1,4 @@
-package com.camunda.starter.camunda_starter_jee.nonarquillian;
+package com.camunda.starter;
 
 import org.apache.ibatis.logging.LogFactory;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
@@ -22,7 +22,7 @@ public class InMemoryH2Test {
   @Rule
   public static ProcessEngineRule rule = TestCoverageProcessEngineRuleBuilder.create().build();
 
-  private static final String PROCESS_DEFINITION_KEY = "camunda-starter-jee";
+  private static final String PROCESS_DEFINITION_KEY = "camunda-starter-servlet";
 
   static {
     LogFactory.useSlf4jLogging(); // MyBatis

@@ -1,4 +1,4 @@
-package com.camunda.starter.camunda_starter_jee;
+package com.camunda.starter;
 
 import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.*;
 import static org.junit.Assert.*;

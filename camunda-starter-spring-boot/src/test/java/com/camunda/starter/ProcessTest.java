@@ -1,4 +1,4 @@
-package com.camunda.starter.camunda_starter_spring_boot;
+package com.camunda.starter;
 
 import org.apache.ibatis.logging.LogFactory;
 import org.camunda.bpm.engine.ProcessEngine;
