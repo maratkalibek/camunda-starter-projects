@@ -2,40 +2,45 @@ package com.camunda.starter;
 
 import org.apache.ibatis.logging.LogFactory;
 import org.camunda.bpm.engine.ProcessEngine;
-import org.camunda.bpm.engine.runtime.ProcessInstance;
+import org.camunda.bpm.engine.test.Deployment;
+import org.camunda.bpm.engine.test.ProcessEngineRule;
+import org.camunda.bpm.extension.process_test_coverage.junit.rules.TestCoverageProcessEngineRuleBuilder;
+import org.camunda.bpm.scenario.ProcessScenario;
 import org.junit.Before;
+import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.camunda.bpm.scenario.ProcessScenario;
-import org.camunda.bpm.scenario.Scenario;
-import org.camunda.bpm.scenario.run.ProcessRunner.ExecutableRunner;
 
-import org.mockito.Mock;
-import static org.mockito.Matchers.*;
-import static org.mockito.Mockito.*;
-import org.mockito.MockitoAnnotations;
+import javax.annotation.PostConstruct;
 
-import static org.camunda.bpm.engine.test.assertions.ProcessEngineTests.*;
-import static org.junit.Assert.*;
+import static org.camunda.bpm.engine.test.assertions.ProcessEngineAssertions.init;
 
-/**
- * Test case starting an in-memory database-backed Process Engine.
- */
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = WebEnvironment.NONE)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class ProcessScenarioTest {
 
-  private static final String PROCESS_DEFINITION_KEY = "camunda-starter-spring-boot";
+  private static final String PROCESS_DEFINITION_KEY = "spring-boot";
 
   @Autowired
   private ProcessEngine processEngine;
 
   static {
     LogFactory.useSlf4jLogging(); // MyBatis
+  }
+
+  @Rule
+  @ClassRule
+  public static ProcessEngineRule rule;
+
+  @PostConstruct
+  void initRule() {
+    rule = TestCoverageProcessEngineRuleBuilder.create(processEngine).build();
   }
 
   @Before
@@ -48,6 +53,7 @@ public class ProcessScenarioTest {
   private ProcessScenario myProcess;
 
   @Test
+  @Deployment(resources="process.bpmn") // only required for process test coverage
   public void testHappyPath() {
     // Define scenarios by using camunda-bpm-assert-scenario:
 
